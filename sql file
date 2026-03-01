@@ -1,0 +1,75 @@
+-- ===============================
+-- CREATE DATABASE
+-- ===============================
+CREATE DATABASE IF NOT EXISTS ai_study_companion;
+USE ai_study_companion;
+
+-- ===============================
+-- USERS TABLE
+-- ===============================
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+-- ===============================
+-- QUIZ QUESTIONS TABLE
+-- ===============================
+CREATE TABLE IF NOT EXISTS quiz_questions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(100) NOT NULL,
+    question TEXT NOT NULL,
+    option1 VARCHAR(255),
+    option2 VARCHAR(255),
+    option3 VARCHAR(255),
+    option4 VARCHAR(255),
+    answer VARCHAR(255)
+);
+
+-- ===============================
+-- INSERT 5 SQL QUESTIONS
+-- ===============================
+INSERT INTO quiz_questions 
+(category, question, option1, option2, option3, option4, answer)
+VALUES
+('sql',
+ 'What is SQL?',
+ 'Programming Language',
+ 'Database Language',
+ 'Operating System',
+ 'Hardware',
+ 'Database Language'),
+
+('sql',
+ 'Which command is used to retrieve data?',
+ 'INSERT',
+ 'DELETE',
+ 'SELECT',
+ 'UPDATE',
+ 'SELECT'),
+
+('sql',
+ 'Which key uniquely identifies a record?',
+ 'Foreign Key',
+ 'Primary Key',
+ 'Super Key',
+ 'Candidate Key',
+ 'Primary Key'),
+
+('sql',
+ 'Which clause is used to filter records?',
+ 'ORDER BY',
+ 'GROUP BY',
+ 'WHERE',
+ 'HAVING',
+ 'WHERE'),
+
+('sql',
+ 'Which command removes a table?',
+ 'DELETE',
+ 'DROP',
+ 'REMOVE',
+ 'CLEAR',
+ 'DROP');
